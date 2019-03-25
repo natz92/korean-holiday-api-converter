@@ -1,15 +1,16 @@
 {
-    "name": "natz92/korean-holiday-api-converter",
-    "type": "library",
-    "license": "MIT License",
-    "authors": [
-        {
-            "name": "natz92",
-            "email": "natz.galaxy@gmail.com"
-        }
-    ],
-    "require": {
-        "symfony/yaml": "^4.2",
-        "guzzlehttp/guzzle": "^6.3"
+  "name": "natz92/korean-holiday-api-converter",
+  "type": "library",
+  "license": "MIT License",
+  "authors": [
+    {
+      "name": "natz92",
+      "email": "natz.galaxy@gmail.com"
     }
+  ],
+  "require": {
+    "symfony/yaml": "^4.2",
+    "guzzlehttp/guzzle": "^6.3",
+    "ext-simplexml": "*"
+  }
 }
