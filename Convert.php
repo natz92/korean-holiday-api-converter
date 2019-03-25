@@ -59,12 +59,13 @@ class Convert
 
             $xml = simplexml_load_string($response->getBody()->getContents());
 
+            $solMonth = (int) $solMonth;
             foreach ($xml->body->items->item as $item) {
 
-                $text .= "-\n";
-                $text .= "\tname: {$item->dateName}\n";
-                $text .= "\tmonth: {$solMonth}\n";
-                $text .= "\tday: " . date('d', strtotime($item->locdate)) . "\n";
+                $text .= "'" . date('Y-m-d', strtotime($item->locdate)) . "':\n";
+                $text .= "  name: {$item->dateName}\n";
+                $text .= "  month: '{$solMonth}'\n";
+                $text .= "  day: '" . date('j', strtotime($item->locdate)) . "'\n\n";
             }
 
             if ($month++ == 12) {
