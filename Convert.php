@@ -1,4 +1,6 @@
 <?php
+require_once 'vendor/autoload.php';
+
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 
@@ -59,10 +61,10 @@ class Convert
 
             foreach ($xml->body->items->item as $item) {
 
-                $text .= date('Y-m-d', strtotime($item->locdate)) . ":\n";
-                $text .= "\tname: '{$item->dateName}'\n";
-                $text .= "\tmonth: '{$solMonth}'\n";
-                $text .= "\tday: '" . date('d', strtotime($item->locdate)) . "'\n";
+                $text .= "-\n";
+                $text .= "\tname: {$item->dateName}\n";
+                $text .= "\tmonth: {$solMonth}\n";
+                $text .= "\tday: " . date('d', strtotime($item->locdate)) . "\n";
             }
 
             if ($month++ == 12) {
